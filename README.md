@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 
 In this project, we were tasked with developing threads by developing
 the containers and implementation along with testing the program ourselves to
@@ -6,8 +6,8 @@ make sure that it works. We started by creating the queue that would be used in
 the thread application, then designing the thread, then adding in preempt
 functionality.
 
-#Implementation
-##Queue
+# Implementation
+## Queue
 
 To create the queue, we started with the data structure that would be
 used to hold the queue data. We figured that the best data structure to be used
@@ -24,7 +24,7 @@ over the node being deleted. For queue iteration, we would iterate through the
 queue and apply the function to each node's data. Lastly, for queue size, we
 would simply return the data for size in the queue struct.
 
-##Uthread
+## Uthread
 
 To create the threads, we first started by making the data structure to
 contain information about the thread. We added a integer variable that would
@@ -54,7 +54,7 @@ to check if the thread was joined, because in that case we have to find the
 blocked thread in the blocked queue and enqueue it back into the ready queue.
 Once that's done we set the next ready thread to running. 
 
-##Preemption
+## Preemption
 
 Lastly for preemption, we started by writing the enable and disable,
 since we just needed to use sigprocmask to unblock or block our sigvtalrm
@@ -70,7 +70,7 @@ thread function and enables at the end of every thread function since we didn't
 want preemption to go off when we were changing the thread information and cause
 data corruption.
 
-#Testing
+# Testing
 
 To test our queue, threads, and preemption, we made several test cases
 trying to think of many different possibilities, and seeing if our output was as
@@ -87,7 +87,7 @@ correctly since we can see if all the threads would execute without yields. We
 also added the while(1) loop since we figured that preemption was implemented to
 avoid infinite loops breaking the thread.
 
-#Conclusion
+# Conclusion
 
 In the end, we were able to implement threading into our programs and
 learn the concepts behind threading. One of the problems we encountered with
