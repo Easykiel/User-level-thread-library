@@ -1,5 +1,6 @@
 #Introduction
-	In this project, we were tasked with developing threads by developing
+
+In this project, we were tasked with developing threads by developing
 the containers and implementation along with testing the program ourselves to
 make sure that it works. We started by creating the queue that would be used in
 the thread application, then designing the thread, then adding in preempt
@@ -7,7 +8,8 @@ functionality.
 
 #Implementation
 ##Queue
-	To create the queue, we started with the data structure that would be
+
+To create the queue, we started with the data structure that would be
 used to hold the queue data. We figured that the best data structure to be used
 in the queue would be a double linked list, since we can enqueue and dequeue in
 FIFO order in O(1) time by keeping a pointer for the head and tail, which we
@@ -23,7 +25,8 @@ queue and apply the function to each node's data. Lastly, for queue size, we
 would simply return the data for size in the queue struct.
 
 ##Uthread
-	To create the threads, we first started by making the data structure to
+
+To create the threads, we first started by making the data structure to
 contain information about the thread. We added a integer variable that would
 keep track of the thread state, a flag to see if the thread was joined, a return
 value for the joined thread, a TID to identify the thread, a ctx variable for
@@ -52,7 +55,8 @@ blocked thread in the blocked queue and enqueue it back into the ready queue.
 Once that's done we set the next ready thread to running. 
 
 ##Preemption
-	Lastly for preemption, we started by writing the enable and disable,
+
+Lastly for preemption, we started by writing the enable and disable,
 since we just needed to use sigprocmask to unblock or block our sigvtalrm
 signal. Preempt start was more tricky but we ended up using the signal function
 to set up our interrupt handler, which would call uthread yield. We set it up
@@ -67,7 +71,8 @@ want preemption to go off when we were changing the thread information and cause
 data corruption.
 
 #Testing
-	To test our queue, threads, and preemption, we made several test cases
+
+To test our queue, threads, and preemption, we made several test cases
 trying to think of many different possibilities, and seeing if our output was as
 expected. For the queue, we tested the basics by calling different queue
 functions and seeing if they worked. We then mixed functions together in our
@@ -83,7 +88,8 @@ also added the while(1) loop since we figured that preemption was implemented to
 avoid infinite loops breaking the thread.
 
 #Conclusion
-	In the end, we were able to implement threading into our programs and
+
+In the end, we were able to implement threading into our programs and
 learn the concepts behind threading. One of the problems we encountered with
 this program was with threading. We tried implemting the threading with one big
 queue, but we realized that it would take too long to get to ready threads when
